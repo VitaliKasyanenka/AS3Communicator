@@ -446,6 +446,8 @@ package com.innogames.as3communicator.controllers
 				propertyName:String
 		):String
 		{
+			var ptLocal:Point;
+			var ptGlobal:Point;
 			var start:int                  = getTimer();
 			var targetObject:DisplayObject = this.findObjectByName(objectName, this.getChildren(this.objStage));
 			var diff:int                   = getTimer() - start;
@@ -460,7 +462,18 @@ package com.innogames.as3communicator.controllers
 				return 'Couldn\'t find property \'' + propertyName + '\' on object \'' + objectName + '\' in \'' + diff
 					   + '\'ms';
 			}
+			
+			ptLocal = new Point(targetObject.x, targetObject.y);
+			ptGlobal = targetObject.localToGlobal(ptLocal);
+			
+			if (propertyName == 'x') {
+				return propertyName + '=' + ptGlobal.x;
+			}
 
+			if (propertyName == 'y') {
+				return propertyName + '=' + ptGlobal.y;
+			}
+			
 			return propertyName + '=' + targetObject[propertyName];
 		}
 
