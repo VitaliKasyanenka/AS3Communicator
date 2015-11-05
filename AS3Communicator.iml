@@ -11,7 +11,13 @@
             <entry library-id="5787490a-5921-4f14-b7e3-046758645ff9">
               <dependency linkage="Merged" />
             </entry>
-          </entries>
+            <entry library-id="a712ff6c-e5e3-4cb9-89d4-08375035d32d">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="0269dc4d-998a-41aa-8553-1922722b8b63">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries
           <sdk name="AIRSDK_Compiler" />
         </dependencies>
         <compiler-options />
@@ -55,6 +61,46 @@
         <properties id="5787490a-5921-4f14-b7e3-046758645ff9" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/hamcrest-as3-only-1.2.0.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="73bf9b7e-7245-4001-9d46-6c948503dc43" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/starling-1.5.1.innogames-custom.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="a712ff6c-e5e3-4cb9-89d4-08375035d32d" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/starling-1.5.1.innogames-custom.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="15c9d22f-fb62-41b1-a30f-a223f4b8dd11" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/snake-0.5.1.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="0269dc4d-998a-41aa-8553-1922722b8b63" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../game_foe_browser/Frontend/client/libs/snake-0.5.1.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
