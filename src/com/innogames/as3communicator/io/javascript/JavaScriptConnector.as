@@ -95,6 +95,10 @@ package com.innogames.as3communicator.io.javascript {
 			objAPIMethod.description		= objAPIMethod.name + '(x, y) - Clicks on the specified position on screen';
 			this.vecAPI[this.vecAPI.length] = objAPIMethod;
 
+			objAPIMethod					= new APIMethod('toggleSearchMode', objController.toggleSearchMode);
+			objAPIMethod.description		= objAPIMethod.name + '() Toggles search mode';
+			this.vecAPI[this.vecAPI.length] = objAPIMethod;
+
 			objAPIMethod                    = new APIMethod('clickObject', objController.clickObject);
 			objAPIMethod.description        = objAPIMethod.name
 											  + '(name) - Clicks on the specified object, if it can be'

@@ -30,7 +30,8 @@ package com.innogames.as3communicator.controllers
 
 		private static var objInstance:APIController;
 
-		private var blnHighlightUnderCursor:Boolean,
+		private var searchModeEnabled:Boolean,
+					blnHighlightUnderCursor:Boolean,
 					blnTraceCursorPosition:Boolean,
 					objPreviousHighlightedObject:DisplayObject,
 					objStage:Stage;
@@ -623,6 +624,21 @@ package com.innogames.as3communicator.controllers
 			return "Highlighting under cursor switched on.";
 		}
 
+		public function toggleSearchMode():String
+		{
+			if(searchModeEnabled)
+			{
+				objStage.removeEventListener(MouseEvent.CLICK, searchModeHandler);
+				searchModeEnabled=false;
+				return"Search mode disabled";
+			}
+			else
+			{
+				objStage.addEventListener(MouseEvent.CLICK, searchModeHandler);
+				searchModeEnabled=true;
+				return "Search mode enabled";
+			}
+		}
 
 		testable function getFQI(objDO:DisplayObject):String
 		{
@@ -641,6 +657,17 @@ package com.innogames.as3communicator.controllers
 			return strFQI;
 		}
 
+		private function searchModeHandler(evt:MouseEvent):void
+		{
+			var currentObject:DisplayObject;
+			var allObjectsUnderCursor:Array = objStage.getObjectsUnderPoint(new Point(evt.stageX, evt.stageY));
+			for each(var obj:DisplayObject in allObjectsUnderCursor)
+			{
+				if ((obj as InteractiveObject).mouseEnabled) {
+					DebugLogger.instance.log(this.getFQI(obj) + '' + obj);
+				}
+			}
+		}
 
 		private function highlightMoveHandler(evt:MouseEvent):void
 		{
